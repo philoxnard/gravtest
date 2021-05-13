@@ -1,0 +1,43 @@
+{% extends "gravity/admin/admin_template.j2" %}
+{% block content %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Create New Event</h1>
+        <p class="mb-4">Use this page to create a new event</p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">New Event</h6>
+        </div>
+
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="event_new_title">Event Title</label>
+                    <input type="text" class="form-control" id="event_new_title" placeholder="Enter Event Title">
+                </div>
+                <div class="form-group">
+                    <label for="event_new_location">Event Location</label>
+                    <input type="text" class="form-control" id="event_new_location" placeholder="Event Location">
+                </div>
+                <div class="form-group">
+                    <label for="event_new_datetime">Event Date and Time</label>
+                    <input type="text" class="form-control" id="event_new_datetime" placeholder="Event Date and Time">
+                </div>
+
+                <div class="form-group">
+                    <label for="event_new_title">Event Description:</label>
+                    <textarea class="form-control" rows="6" id="event_new_description"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-primary" onClick="submitNewEvent()" id="submit_event_new_button">Create Event</button>
+            </form>
+        </div>
+        </div>
+
+    </div>
+
+{% endblock %}

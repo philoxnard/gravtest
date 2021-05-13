@@ -1,0 +1,69 @@
+{% extends "gravity/admin/admin_template.j2" %}
+{% block content %}
+
+      {% include 'gravity/admin/users/modals.j2' %}
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Manage Users</h1>
+            <button type="button" id="addNewUserButton" class="btn btn-sm btn-primary shadow-sm">Add New User</button>
+          </div>
+
+          <!-- DataTables Users -->
+          <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Manage Users</h6>
+                
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="userTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                      <th scope="col">Username</th>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Admin</th>
+                      <th scope="col">Admin Web</th>
+                      <th scope="col">Edit User</th>
+                      <th scope="col">Password</th>
+                      <th scope="col">Logout</th>
+                      <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody id="users_tbody">
+                      {% for user in user_items %}
+                          <tr>
+                            <td><a href="" target="_blank">{{ user.username }}</a></td>
+                            <td>{{ user.first_name }}</td>
+                            <td>{{ user.last_name }}</td>
+                            {%if user.permissions.admin %}
+                            <td><i class="fa fa-check"></i></td>
+                            {% else %}
+                            <td><i class="fa fa-times-circle"></i></td>
+                            {% endif %}
+                            {%if user.permissions.web %}
+                            <td><i class="fa fa-check"></i></td>
+                            {% else %}
+                            <td><i class="fa fa-times-circle"></i></td>
+                            {% endif %}
+                            <td><button type="button" data-username="{{ user.username }}" data-first_name="{{ user.first_name }}" data-last_name="{{ user.last_name }}" data-admin="{{ user.permissions.admin }}" data-web="{{ user.permissions.web }}" class="btn btn-default user_edit_button"><i class="fa fa-wrench text-primary"></i></button></a></td>
+                            <td><button type="button" data-username="{{ user.username }}" class="btn btn-default user_set_password_button"><i class="fa fa-wrench text-primary"></i></button></a></td>
+                            <td><button type="button" data-username="{{ user.username }}" class="btn btn-default user_logout_button"><i class="fa fa-wrench text-primary"></i></button></a></td>
+                            <td><button type="button" data-username="{{ user.username }}" class="btn btn-default user_delete_button"><i class="fa fa-trash text-primary"></i></button></td>
+                          </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+      </div>
+      <!-- /.container-fluid -->
+
+      <script src="/js/admin/users/manage.js"></script>
+
+{% endblock %}

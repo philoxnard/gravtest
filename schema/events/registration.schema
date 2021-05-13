@@ -1,0 +1,37 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "JSON user object",
+	"description": "Structure of the file that stores the event registrations.",
+	"type": "array",
+	"events" : {
+		"type" : "object",
+		"properties" : {
+			"registrations" : {
+				"description": "Date and time the user was created",
+				"type": "object",
+				"properties" : {
+					"created" : {
+						"description": "Date and time the user was created",
+						"type": "string"
+					},
+					"first_name" : {
+						"description": "First name of the registered user.",
+						"type": "string"
+					},
+					"last_name" : {
+						"description": "Last name of the registered user.",
+						"type": "string"
+					},
+					"email" : {
+						"description": "Email of the registered user.",
+						"type": "string"
+					},
+					"checkedin" : {
+						"description": "Boolean to determine if attendee checked in.",
+						"type": "boolean"
+					},
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Gravity Web Framework</title>
+
+  <!-- Font Awesome Icons -->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <!-- Plugin CSS -->
+  <link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+  <!-- Theme CSS - Includes Bootstrap -->
+  <link href="/css/creative.min.css" rel="stylesheet">
+
+  <!-- Elements CSS -->
+  <link href="/css/stripe-elements.css" rel="stylesheet">
+
+  <!-- Include jquery -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+
+</head>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="/js/stripe/elements.js"></script>
+<body>
+  <form>
+    <div class="group">
+      <label>
+        <span>Name</span>
+        <input name="cardholder-name" class="field" placeholder="Jane Doe" />
+      </label>
+      <label>
+        <span>Phone</span>
+        <input class="field" placeholder="(123) 456-7890" type="tel" />
+      </label>
+    </div>
+    <div class="group">
+      <label>
+        <span>Card</span>
+        <div id="card-element" class="field"></div>
+      </label>
+    </div>
+    <button type="submit">Pay $25</button>
+    <div class="outcome">
+      <div class="error"></div>
+      <div class="success">
+        Success! Your Stripe token is <span class="token"></span>
+      </div>
+    </div>
+  </form>
+</body>

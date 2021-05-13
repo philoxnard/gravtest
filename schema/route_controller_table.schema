@@ -1,0 +1,31 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Gravity Route Controller Table Schema",
+	"description": "Structure of the route controller table that determines which route matches which controller.",
+	"type": "object",
+	"items" : {
+		"type" : "object",
+		"properties" : {
+			"routes" : {
+				"description": "Route items, the key is the route label.",
+				"type": "object",
+				"properties" : {
+					"route_label_key" : {
+						"description" : "Any information needed about this pariticular route.",
+						"type" : "object",
+						"properties" : {
+							"controller" : {
+								"description" : "The controller than handles this route",
+								"type" : "Function pointer
+							},
+							"routes" : {
+								"description" : "The next level down that handles routes with multiple levels.",
+								"type" : "Function pointer"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

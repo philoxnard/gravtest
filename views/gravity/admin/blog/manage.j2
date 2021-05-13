@@ -1,0 +1,62 @@
+{% extends "gravity/admin/admin_template.j2" %}
+{% block content %}
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Manage Blog Posts</h1>
+          <p class="mb-4">Use this page to manage your blog posts.</p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Manage Blog Posts</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Date/Time Created</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for item in blog_items %}
+                        <tr>
+                        <td><a href="/blog/{{ item.label }}" target="_blank">{{ item.title }}</a></td>
+                        <td>{{ item.datetime_created }}</td>
+                        <td><a href="/admin/blog/edit/{{ item.label }}"><button type="button" class="btn btn-default edit_blog_button"><i class="fa fa-wrench text-primary"></i></button></a></td>
+                        <td><button type="button" data-label="{{ item.label }}" class="btn btn-default delete_blog_post_button"><i class="fa fa-trash text-primary"></i></button></td>
+                        </tr>
+                        <tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+
+    <script>
+        $( ".delete_blog_post_button" ).click(function() {
+            const label = $(this).data('label');
+
+            var r = confirm( "Are you sure you want to delete this event?" );
+            if (r == true) {
+                console.log( "Deleting this event " + label )
+
+                submitBlogPostDelete( label, "/admin/blog/manage" )
+            } else {
+                console.log("Delete Post Canceled")
+            }
+        });
+    </script>
+
+{% endblock %}

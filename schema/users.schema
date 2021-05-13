@@ -1,0 +1,53 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "JSON user object",
+	"description": "Structure of the file that stores a users information and permissions.",
+	"type": "array",
+	"items" : {
+		"type" : "object",
+		"required": [ "username" ],
+		"properties" : {
+			"created" : {
+				"description": "Date and time the user was created",
+				"type": "string"
+			},
+			"name" : {
+				"description": "Full name",
+				"type": "string"
+			},
+			"first_name" : {
+				"description": "First name of the user",
+				"type": "string"
+			},
+			"last_name" : {
+				"description": "Last name of the user",
+				"type": "string"
+			},
+			"username" : {
+				"description": "The username for this user",
+				"type": "string"
+			},
+			"password" : {
+				"description" : "The password for this user",
+				"type" : "string"
+			},
+			"permissions" : {
+				"type" : "object",
+				"properties" : {
+					"admin" : {
+						"description": "Admin priviledge",
+						"type": "boolean"
+					},
+					"member" : {
+						"description": "Member priviledge",
+						"type": "boolean"
+					},
+					"web" : {
+						"description": "Web priviledge",
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}

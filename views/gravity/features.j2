@@ -1,0 +1,106 @@
+{% extends "gravity/main_template.j2" %}
+{% block content %}
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-10 align-self-end">
+            <img src="/img/logo/gravity_logo_transparent.png" alt="" height="200" width="200" style="padding: 5px 5px 5px 5px;"/>
+          <h1 class="text-uppercase text-white font-weight-bold">Gravity Web Framework Features!</h1>
+          <hr class="divider my-4">
+        </div>
+        <div class="col-lg-8 align-self-baseline">
+          <p class="text-white-75 font-weight-light mb-5">This page displays all of the features this web framework (when complete) will support and teach you how to implement, modify, and enhance yourself.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="page-section" id="contact">
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <ul class="list-group">
+            {% for item in bullets %}
+              <li class="list-group-item">{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <hr class="divider my-4">
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Examples</h2>
+        <div>
+            <div class="form-group">
+                <label for="ajax_test_input">AJAX Test Input</label>
+                <input type="text" class="form-control" id="ajax_test_input" placeholder="Enter input text">
+                <small id="ajax_help" class="form-text text-muted">This will be sent to the Gravity server with an AJAX request.</small>
+            </div>
+            <button type="submit" class="btn btn-outline-primary" onClick="test_ajax()">Send AJAX Request</button>
+            <p></p>
+
+            <div class="alert alert-success fade show" role="alert" id="ajax_output_alert" style="display:none">
+                <h4 class="alert-heading">Well done!</h4>
+                <p>You successfully sent a message from this browswer to the server, it processed the message, and sent you back a response!</p>
+                <p id="ajax_test_output"></p>
+                <hr>
+                <p class="mb-0">This is the start of building efficient client side code through AJAX requests.</p>
+            </div>
+            <hr class="divider my-4">
+        </div>
+
+        <div>
+            <div class="form-group">
+                <label for="ajax_test_input">Web Socket Test Input</label>
+                <input type="text" class="form-control" id="websocket_test_input" placeholder="Enter input text" disabled>
+                <small id="ajax_help" class="form-text text-muted">This will be sent to the Gravity server via a websocket connection.</small>
+            </div>
+            <button type="button" class="btn btn-outline-primary" id="toggle_websocket_button" onClick="toggleWebSocket()">Open Websocket</button>
+            <button type="submit" class="btn btn-outline-primary" onClick="sendAjaxTest()" id="send_websocket_button" disabled>Send Websocket Request</button>
+            <p></p>
+
+            <div class="alert alert-success fade show" role="alert" id="websocket_output_alert" style="display:none">
+                <h4 class="alert-heading">Well done!</h4>
+                <p>You successfully opened a websocket and sent a message from this browswer to the server, it processed the message, and send you back a response!</p>
+                <p>The websocket is still opened and if you click the Send button again, another message will be sent over the already established connection.</p>
+                <p>If you wish to close the websocket, click the Close Websocket button. Until you open the socket again, you won't be able to send a message.</p>
+                <p id="websocket_test_output"></p>
+                <hr>
+                <p class="mb-0">This is the start of building efficient client side code through Websocket connections.</p>
+            </div>
+        </div>
+
+
+        <div>
+            <div class="form-group">
+                <label for="ajax_test_input">Web Socket Test Input</label>
+            </div>
+            <p>If you are logged in, this will log you out</p>
+            <button type="button" class="btn btn-outline-primary" id="logout_button" onClick="logout()">Logout</button>
+            <p></p>
+        </div>
+
+        <div class="container">
+          <div class="form-group">
+              <labe>File Upload</label>
+          </div>
+          <div class="row upload_box">
+              <div class="col-sm-6 col-sm-offset-4">
+                <form ENCTYPE="multipart/form-data" method="post">
+                    <input type="file" name="fileupload" value="upload" id="fileupload">
+                    <label for="fileupload"> Select a file to upload</label>
+                    <input class="btn btn-default" type="submit" value="Upload">
+                </form>
+              </div>
+          </div>
+        </div>
+         {% include 'stripe/checkout.j2' %}
+        </div>
+      </div>
+  </section>
+
+{% endblock %}

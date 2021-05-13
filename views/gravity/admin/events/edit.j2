@@ -1,0 +1,48 @@
+{% extends "gravity/admin/admin_template.j2" %}
+{% block content %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Edit Event</h1>
+        <p class="mb-4">Use this page to edit an event that already exists</p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Edit Event</h6>
+        </div>
+
+        <div class="card-body">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2>Edit Event</h2>
+                    <div class="form-group">
+                        <label for="event_edit_post_title">Event Title:</label>
+                        <input type="text" class="form-control" id="event_edit_title" placeholder="Enter Event Title" value="{{ event.title }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="event_edit_post_subtitle">Event Location:</label>
+                        <input type="text" class="form-control" id="event_edit_location" placeholder="Event Location" value="{{ event.location }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="event_edit_datetime">Event Date and Time</label>
+                        <input type="text" class="form-control" id="event_edit_datetime" placeholder="Event Date and Time" value="{{ event.datetime }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="event_edit_post_title">Event Description:</label>
+                        <textarea class="form-control" rows="10" id="event_edit_description">{{ event.description }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary" onClick="submitEventEdit()" id="submit_event_edit_button">Edit Event</button>
+                    <button type="submit" class="btn btn-outline-primary" onClick="submitEventDeleteHandler()" id="submit_event_delete_button">Delete Event</button>
+                </div>
+                <input type="text" id="event_edit_label" value="{{ event.label }}" hidden>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+{% endblock %}

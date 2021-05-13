@@ -1,0 +1,118 @@
+
+    <!-- ADD NEW USER FORM -->
+    <div id="newUserModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal_header">Add User</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+
+          <div class="modal-body">
+            <div class="panel-body new_user_panel">
+              <div class="form-group">
+                <div><label>First Name</label></div>
+                <input class="form-control" id="modal_first_name">
+              </div>
+              <div class="form-group">
+                  <div><label>Last Name</label></div>
+                  <input class="form-control" id="modal_last_name">
+              </div>
+              <div class="form-group">
+                <div><label>Email</label></div>
+                <input class="form-control" id="modal_username">
+              </div>
+              <div class="form-group">
+                <div><label>Password</label></div>
+                <input class="form-control" type="password" id="modal_password">
+              </div>
+              <div class="form-group">
+                <div><label>Confirm Password</label></div>
+                <input class="form-control" type="password"id="modal_password_confirm">
+              </div>
+              <div class="form-group">
+                <div><span><input id="adminCheckBox" type="checkbox"></span> <label>Administrator privilege</label></div>
+              </div>
+              <div class="form-group">
+                <div><span><input id="webCheckBox" type="checkbox" checked></span> <label>HTTPS privilege</label></div>
+              </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="submitNewUserButton" class="btn btn-default">Submit New User</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- EDIT USER FORM -->
+    <div id="editUserModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal_header">Edit User</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="panel-body new_user_panel">
+              <div class="form-group">
+                  <div><label>Username</label></div>
+                  <input class="form-control" id="modal_edit_username" disabled>
+              </div>
+              <div class="form-group">
+              <div><label>First Name</label></div>
+                <input class="form-control" id="modal_edit_first_name">
+              </div>
+              <div><label>Last Name</label></div>
+                <input class="form-control" id="modal_edit_last_name">
+              </div>
+              <hr>
+              <div class="form-group">
+                <div><span><input id="editAdminCheckBox" type="checkbox" checked></span> <label>Administrator Privilege</label></div>
+              </div>
+              <div class="form-group">
+                <div><span><input id="editWebCheckBox" type="checkbox" checked></span> <label>Web Privilege</label></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="submitEditUserButton" class="btn btn-default" data-dismiss="modal">Submit Edit User</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EDIT PASSWORD FORM -->
+    <div id="editUserPasswordModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h4 class="modal-title" id="modal_header">Edit User Password</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="panel-body new_user_panel">
+              <div class="form-group">
+                <div><label>Username</label></div>
+                  <input class="form-control" id="modal_change_password_username" disabled>
+                </div>
+              <div class="form-group">
+                <div><label>Password</label></div>
+                <input class="form-control" type="password" id="modal_change_password">
+              </div>
+              <div class="form-group">
+                <div><label>Confirm Password</label></div>
+                <input class="form-control" type="password" id="modal_change_password_confirm">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="submitChangeUserPasswordButton" class="btn btn-default">Submit Password</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>

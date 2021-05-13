@@ -1,0 +1,5 @@
+Look at how cool this is.
+
+Text being read from a file.
+
+Line by line like a haiku.

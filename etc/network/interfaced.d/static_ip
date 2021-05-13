@@ -1,0 +1,13 @@
+# This file configures the eth0 interface with a static IP
+# address that will be configured at boot time.
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+
+allow-hotplug eth0
+iface eth0 inet static
+	address 10.4.1.254
+	netmask 255.255.0.0

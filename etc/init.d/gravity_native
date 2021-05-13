@@ -1,0 +1,37 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:          Gravity Web System - Native Launch
+# Required-Start:
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description:	Starts the Gravity Web Server (Non-Docker Implementation)
+### END INIT INFO
+
+GRAVITY_PYTHON_FILE=/usr/local/src/gravity/app/GravityMain.py
+#GRAVITY_LOG=/usr/local/src/gravity/logs/gravity.log
+GRAVITY_LOG=/dev/null
+
+if [ ! -x $DOCKER_COMPOSE ]; then echo "Couldn't find $DOCKER_COMPOSE"; exit -1; fi
+if [ ! -f $YML_FILE ]; then echo "Couldn't find $YML_FILE"; exit -1; fi;
+
+case "$1" in
+	start)
+		echo "Starting Gravity Web Server"
+		python3 $GRAVITY_PYTHON_FILE >> $GRAVITY_LOG 2>&1 &
+	;;
+	stop)
+		echo "Stopping Gravity Web Server"
+		killall python3
+	;;
+	restart)
+		$0 stop
+		$0 start
+	;;
+	*)
+	log_action_msg "Usage: /etc/init.d/gravity_native {start|stop|restart}" || grue
+	exit 1
+	;;
+esac
+

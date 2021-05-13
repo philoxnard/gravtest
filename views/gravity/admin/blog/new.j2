@@ -1,0 +1,38 @@
+{% extends "gravity/admin/admin_template.j2" %}
+{% block content %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Create New Blog Post</h1>
+        <p class="mb-4">Use this page to create a new blog post</p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">New Blog Post</h6>
+        </div>
+
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="blog_new_post_title">Blog Title</label>
+                    <input type="text" class="form-control" id="blog_new_post_title" aria-describedby="emailHelp" placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label for="blog_new_post_subtitle">Blog Subtitle</label>
+                    <input type="text" class="form-control" id="blog_new_post_subtitle" placeholder="Sub-Title">
+                </div>
+                <div class="form-group">
+                    <label for="blog_new_post_text">Blog Text</label>
+                    <textarea class="form-control" rows="8" id="blog_new_post_text"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-primary" onClick="sendBlogNewPost()" id="blog_new_post_button">Post</button>
+            </form>
+        </div>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,8 @@
+{
+	"paragraphs" : [
+		"To create a framework that makes learning the basics of how a web server works accessible to anyone.  The Gravity Framework will be built out as an open source framework and developers can build their own systems on top of it, ensuring they don't have to constantly re-invent the software wheel.",
+		"This framework is built from scratch, show caseing how to use server-side templating, AJAX requests, websockets, user management, client-side rendering, software static analysis, integration with payment systems, and how to build and license open source software technology.",
+		"By working with this framework, you will learn about how to use version control, specifically GIT.  You will learn how to work with a software team, you will learn how to create secure software, and you will have a framework that you can use in your own projects.",
+		"Welcome to the Creative Collisions Tech Community and I hope this project gives you a lot of value for understanding web frameworks and gives you useful tools to succeed."
+	]
+}

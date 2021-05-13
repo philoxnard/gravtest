@@ -1,0 +1,37 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Gravity Contacts List Schema",
+	"description": "Structure of the contacts file that stores the contacts list data.",
+	"type": "object",
+	"items" : {
+		"type" : "object",
+		"properties" : {
+			"list_name" : {
+				"description": "Contact List items",
+				"type": "array",
+				"properties" : {
+					"datetime_created" : {
+						"description" : "The time this blog entry was created.",
+						"type" : "string"
+					},
+					"first_name" : {
+						"description": "First name of the user",
+						"type": "string"
+					},
+					"last_name" : {
+						"description": "Last name of the user",
+						"type": "string"
+					},
+					"email" : {
+						"description": "The email address for this contact",
+						"type": "string"
+					},
+					"phone" : {
+						"description": "The phone number for this contact",
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}

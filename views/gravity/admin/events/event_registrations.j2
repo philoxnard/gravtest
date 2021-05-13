@@ -1,0 +1,64 @@
+{% extends "gravity/admin/admin_template.j2" %}
+{% block content %}
+
+      {% include 'gravity/admin/events/modals.j2' %}
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <a href="/event/{{ event_identifier }}" target="_blank"><h1 class="h3 mb-0 text-gray-800">{{ event_registrations_list.event_title }}</h1></a>
+            <button type="button" id="addNewEventAttendeeButton" class="btn btn-sm btn-primary shadow-sm">Add New Attendee</button>
+          </div>
+
+          <!-- DataTables contacts -->
+          <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Event Attendee Registrations </h6>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="contactTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                      <th scope="col">Date/Time Created</th>
+                      <th scope="col">First Name</th>
+                      <th scope="col">Last Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">Check In</th>
+                      <th scope="col">Edit Registration</th>
+                      <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody id="contacts_tbody">
+                      {% for attendee in event_registrations_list.registrations %}
+                          <tr>
+                            <td>{{ attendee.datetime_created }}</td>
+                            <td>{{ attendee.first_name }}</td>
+                            <td>{{ attendee.last_name }}</td>
+                            <td>{{ attendee.email }}</td>
+                            <td><button type="button" data-email="{{ attendee.email }}" class="btn btn-default attendee_checkin_button">
+                              {% if attendee.checkedin %}
+                              <i class="fa fa-check-circle text-primary"></i>
+                              {% else %}
+                              <i class="far fa-times-circle text-primary"></i>
+                              {% endif %}
+                            </button>
+                            </td>
+                            <td><button type="button" data-email="{{ attendee.email }}" data-first_name="{{ attendee.first_name }}" data-last_name="{{ attendee.last_name }}" data-phone="{{ attendee.phone }}" class="btn btn-default attendee_edit_button"><i class="fa fa-wrench text-primary"></i></button></a></td>
+                            <td><button type="button" data-email="{{ attendee.email }}" class="btn btn-default attendee_delete_button"><i class="fa fa-trash text-primary"></i></button></td>
+                          </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <input type="text" id="event_id" value="{{ event_identifier }}" hidden>
+      </div>
+      <!-- /.container-fluid -->
+
+      <script src="/js/admin/events/manage.js"></script>
+
+{% endblock %}

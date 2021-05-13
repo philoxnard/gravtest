@@ -1,0 +1,16 @@
+{
+	"bullets" : [
+		"Administrator Interface",
+		"AJAX support",
+		"WebSocket support",
+		"Full Docker Container Implementation",
+		"Server-Side Templating with Jinga2",
+		"Client Side Rendering",
+		"File Upload over HTTP POST",
+		"User Login and Administrator Management",
+		"JSON Web Token Support",
+		"JSON Application Programmer Interface (API)",
+		"Complete Offline Support Framework",
+		"Stripe Elements and Checkout Support"
+	]
+}

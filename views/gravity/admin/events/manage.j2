@@ -1,0 +1,65 @@
+{% extends "gravity/admin/admin_template.j2" %}
+{% block content %}
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">Manage Events</h1>
+          <p class="mb-4">Use this page to manage your events.</p>
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Manage Events</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Date/Time</th>
+                    <th scope="col">Registrations</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for event in event_items %}
+                        <tr>
+                        <td><a href="/event/{{ event.label }}" target="_blank">{{ event.title }}</a></td>
+                        <td>{{ event.location }}</td>
+                        <td>{{ event.datetime }}</td>
+                        <td><a href="/admin/event/registrations/{{ event.id }}"><i class="fa fa-child text-primary"></a></td>
+                        <td><a href="/admin/event/edit/{{ event.label }}"><button type="button" class="btn btn-default set_user_password_button"><i class="fa fa-wrench text-primary"></i></button></a></td>
+                        <td><button type="button" data-label="{{ event.label }}" class="btn btn-default delete_event_button"><i class="fa fa-trash text-primary"></i></button></td>
+                        </tr>
+                        <tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    <script>
+        $( ".delete_event_button" ).click(function() {
+            const label = $(this).data('label');
+
+            var r = confirm( "Are you sure you want to delete this event?" );
+            if (r == true) {
+                console.log( "Deleting this event " + label )
+
+                submitEventDelete( label, "/admin/events/manage" )
+            } else {
+                console.log("Delete Share Canceled")
+            }
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "gravity/main_template.j2" %}
+{% block content %}
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-10 align-self-end">
+          <img src="/img/logo/gravity_logo_transparent.png" alt="" height="150" width="150" style="padding: 5px 5px 5px 5px;"/>
+          <h1 class="text-uppercase text-white font-weight-bold">The Birth of the Gravity Web Server Framework!</h1>
+          <hr class="divider my-4">
+        </div>
+        <div class="col-lg-8 align-self-baseline">
+          <p class="text-white-75 font-weight-light mb-5">The Gravity Server was inspired and designed by <a href="https://www.linkedin.com/in/pfarrell85/" target="_blank">Patrick Farrell</a> from Creative Collisions Technology.  The goal is to give humanity a full-stack web framework that is easier to understand than the other open source frameworks out there.</p>
+          <p class="text-white-75 font-weight-light mb-5">As you may know, it can be difficult to dive into an open source framework and the documentation and complexity of the code is often significant. Gravity is designed with this in mind, providing an educational element for how to learn to develop and work with the framework.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="page-section" id="contact">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="mt-0">Gravity Web Framework Goals</h2>
+          <hr class="divider my-4">
+            {% for item in paragraphs %}
+              <p class="text-muted mb-5">{{ item }}</p>
+            {% endfor %}
+        </div>
+      </div>
+
+  </section>
+
+{% endblock %}

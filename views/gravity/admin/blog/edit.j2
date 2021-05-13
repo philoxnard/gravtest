@@ -1,0 +1,43 @@
+{% extends "gravity/admin/admin_template.j2" %}
+{% block content %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Edit Blog Post</h1>
+        <p class="mb-4">Use this page to edit an blog post that already exists</p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Edit Blog</h6>
+        </div>
+
+        <div class="card-body">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2>Edit Blog</h2>
+                    <div class="form-group">
+                        <label for="blog_edit_post_title">Title</label>
+                        <input type="text" class="form-control" id="blog_edit_post_title" placeholder="Title" value="{{ blog_item.title }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="blog_edit_post_subtitle"></label>
+                        <input type="text" class="form-control" id="blog_edit_post_subtitle" placeholder="Sub-title" value="{{ blog_item.subtitle }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="blog_edit_post_text">Blog Text</label>
+                        <textarea class="form-control" rows="10" id="blog_edit_post_text">{{ blog_item.text }}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary" onClick="submitBlogEdit()" id="submit_blog_edit_button">Edit blog</button>
+                    <button type="submit" class="btn btn-outline-primary" onClick="submitBlogDeleteHandler()" id="submit_blog_delete_button">Delete Post</button>
+                </div>
+                <input type="text" id="blog_edit_label" value="{{ blog_item.label }}" hidden>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+{% endblock %}

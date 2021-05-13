@@ -1,0 +1,42 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Gravity Blog Schema",
+	"description": "Structure of the file that stores the blog data.",
+	"type": "array",
+	"blog_items" : {
+		"description": "An array of blog post objects.",
+		"type" : "array",
+		"properties" : {
+			"blog_item" : {
+				"description": "Blog item that defines a blog post.",
+				"type": "object",
+				"properties" : {
+					"datetime_created" : {
+						"description" : "The time this blog entry was created.",
+						"type" : "string"
+					},
+					"label" : {
+						"description" : "The id of this blog post (item).",
+						"type" : "string"
+					},
+					"text" : {
+						"description" : "The blog entry text.",
+						"type" : "string"
+					},
+					"title" : {
+						"description" : "The title of this blog entry.",
+						"type" : "string"
+					},
+					"label" : {
+						"description" : "The label of this blog post (item).",
+						"type" : "string"
+					},
+					"link" : {
+						"description" : "The anchor tag for this blog post.",
+						"type" : "string"
+					}
+				}
+			}
+		}
+	}
+}

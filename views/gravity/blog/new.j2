@@ -1,0 +1,50 @@
+{% extends "gravity/main_template.j2" %}
+{% block content %}
+
+<!-- Custom styles for this template -->
+  <link href="css/clean-blog.css" rel="stylesheet">
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center text-center">
+        <div class="col-lg-10 align-self-end">
+          <h1 class="text-uppercase text-white font-weight-bold">Gravity Blog - New Post</h1>
+          <hr class="divider my-4">
+        </div>
+        <div class="col-lg-8 align-self-baseline">
+          <p class="text-white-75 font-weight-light mb-5">Use this page to create a new blog entry.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="page-section" id="contact">
+    <div class="container">
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+            <h2>New Blog Post</h2>
+            <div class="form-group">
+                <label for="blog_new_post_title">Title:</label>
+                <input type="text" class="form-control" id="blog_new_post_title" placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+                <label for="blog_new_post_subtitle">Sub Title:</label>
+                <input type="text" class="form-control" id="blog_new_post_subtitle" placeholder="Enter Sub-Title">
+            </div>
+
+            <div class="form-group">
+                <label for="blog_new_post_title">Blog Text:</label>
+                <textarea class="form-control" rows="5" id="blog_new_post_text"></textarea>
+            </div>
+            <button type="submit" class="btn btn-outline-primary" onClick="sendBlogNewPost()" id="blog_new_post_button">Post</button>
+        </div>
+      </div>
+
+  </section>
+
+  </section>
+
+{% endblock %}
